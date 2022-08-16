@@ -1,0 +1,7 @@
+#Tue Aug 16 14:15:04 MST 2022
+base.1=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
+path.1=classes2.dex
+base.0=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

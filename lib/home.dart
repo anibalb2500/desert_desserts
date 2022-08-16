@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -115,8 +114,7 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 child: Stack(
-                  overflow: Overflow.visible,
-                  children: <Widget>[
+                  clipBehavior: Clip.none, children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(top: 18.0),
                       child: Align(
@@ -250,8 +248,7 @@ class StackedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      overflow: Overflow.visible,
-      children: <Widget>[
+      clipBehavior: Clip.none, children: <Widget>[
         Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
