@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './home.dart';
+import './developer.dart';
 
 class Login extends StatefulWidget {
   static const routeName = '/login';
@@ -148,6 +149,14 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                           ),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushNamed(Developer.routeName);
+                              }, child: Text('Developer',
+                              style: TextStyle(
+                                color: Color(0xFFD09490),
+                                decoration: TextDecoration.underline,
+                              )))
                         ],
                       )
                     ],

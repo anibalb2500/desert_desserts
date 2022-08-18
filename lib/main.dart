@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icecreamapp/developer.dart';
 
 import './home.dart';
 import './login.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       home: Login(),
       routes: {
         Home.routeName: (ctx) => Home(),
+        Developer.routeName: (ctx) => Developer(),
       },
     );
   }
