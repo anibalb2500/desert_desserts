@@ -17,26 +17,25 @@ class IceCreamWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(viewModel.title),
+            Text(
+                viewModel.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Puffy",
+                    color: Colors.white
+                ),
+            ),
+            Container(
+              height: 63,
+              width: 63,
+              margin: EdgeInsets.only(top: 5),
+              child: Image.asset(viewModel.imageRoute),
+            )
           ],
         ),
         height: 125,
-        width: 130,
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.all(
-            Radius.circular(40),
-          ),
-        ),
-      ),
-      Positioned(
-        left: 70,
-        bottom: 81,
-        child: Container(
-          height: 63,
-          width: 63,
-          child: Image.asset(viewModel.imageRoute),
-        ),
+        width: 130
       ),
     ],
     );
