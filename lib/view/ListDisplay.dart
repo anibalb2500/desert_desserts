@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:icecreamapp/view/ConeWidget/ConeWidget.dart';
+import 'package:icecreamapp/view/ConeWidget/ConeWidgetViewModel.dart';
 import 'package:icecreamapp/view/IceCreamWidget/IceCreamWidgetViewModel.dart';
 
 import 'IceCreamWidget/IceCreamWidget.dart';
@@ -25,14 +27,16 @@ class DynamicList extends State<HorizontalListDisplay> {
   Widget build (BuildContext ctxt) {
     return Expanded(
       child: SizedBox(
-        height: 300,
+        height: 100,
         child: new ListView.builder(
             itemCount: lItems.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext ctxt, int index){
+              Object item = lItems[index];
               if (lItems[index] is IceCreamWidgetViewModel) {
-                // return new Text((lItems[index] as IceCreamWidgetViewModel).title);
-                return new IceCreamWidget(viewModel: lItems[index] as IceCreamWidgetViewModel,);
+                return new IceCreamWidget(viewModel: item as IceCreamWidgetViewModel);
+              } else if (lItems[index] is ConeWidgetViewModel) {
+                return new ConeWidget(viewModel: item as ConeWidgetViewModel);
               } else {
                 // Return empty widget
                 return SizedBox.shrink();

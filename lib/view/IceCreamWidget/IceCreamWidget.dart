@@ -17,7 +17,8 @@ class IceCreamWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            FittedBox(
+              child: Text(
                 viewModel.title,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -25,6 +26,7 @@ class IceCreamWidget extends StatelessWidget {
                     fontFamily: "Puffy",
                     color: Colors.white
                 ),
+              ),
             ),
             Container(
               height: 63,

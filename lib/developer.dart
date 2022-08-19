@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icecreamapp/utils/ViewUtils.dart';
-import 'package:icecreamapp/view/IceCreamWidget/IceCreamWidget.dart';
+import 'package:icecreamapp/view/ConeWidget/ConeWidgetViewModel.dart';
 import 'package:icecreamapp/view/IceCreamWidget/IceCreamWidgetViewModel.dart';
 import 'package:icecreamapp/view/ListDisplay.dart';
 
@@ -81,7 +81,10 @@ class Developer extends StatelessWidget {
             ),
             Row(children: [
               HorizontalListDisplay(lItems: _getIceCreamWidgetViewModels())
-            ])
+            ],),
+            Row(children: [
+              HorizontalListDisplay(lItems: _getConeWidgetViewModels())
+            ],)
           ],
         ));
     },
@@ -97,13 +100,25 @@ class Developer extends StatelessWidget {
     return [
       IceCreamWidgetViewModel(title: "Vanilla", imageRoute: "assets/images/vanilla.png"),
       IceCreamWidgetViewModel(title: "Coconut", imageRoute: "assets/images/coco.png"),
-      IceCreamWidgetViewModel(title: "Exotic", imageRoute: "assets/images/exotic.png"),
-      IceCreamWidgetViewModel(title: "Vanilla 2.0", imageRoute: "assets/images/vanilla.png"),
-      IceCreamWidgetViewModel(title: "Coconut 2.0", imageRoute: "assets/images/coco.png"),
-      IceCreamWidgetViewModel(title: "Exotic 2.0", imageRoute: "assets/images/exotic.png"),
-      IceCreamWidgetViewModel(title: "Vanilla 3.0", imageRoute: "assets/images/vanilla.png"),
-      IceCreamWidgetViewModel(title: "Coconut 3.0", imageRoute: "assets/images/coco.png"),
-      IceCreamWidgetViewModel(title: "Exotic 3.0", imageRoute: "assets/images/exotic.png"),
+      IceCreamWidgetViewModel(title: "Strawberry", imageRoute: "assets/images/exotic.png"),
+      IceCreamWidgetViewModel(title: "Chocolate", imageRoute: "assets/images/vanilla.png"),
+      IceCreamWidgetViewModel(title: "Mint", imageRoute: "assets/images/coco.png"),
+      IceCreamWidgetViewModel(title: "Rocky Road", imageRoute: "assets/images/exotic.png"),
+      IceCreamWidgetViewModel(title: "Neapolitan", imageRoute: "assets/images/vanilla.png"),
+      IceCreamWidgetViewModel(title: "Pepsi Max", imageRoute: "assets/images/coco.png"),
+      IceCreamWidgetViewModel(title: "Cookie Dough", imageRoute: "assets/images/exotic.png"),
+    ];
+  }
+
+  List<ConeWidgetViewModel> _getConeWidgetViewModels() {
+    // Temporarily hard coded. Need to add service class to retrieve dynamically
+    return [
+      ConeWidgetViewModel(title: "Soft Serve Small", imageRoute: "assets/images/vanilla.png"),
+      ConeWidgetViewModel(title: "Soft Serve Medium", imageRoute: "assets/images/vanilla.png"),
+      ConeWidgetViewModel(title: "Waffle Medium", imageRoute: "assets/images/vanilla.png"),
+      ConeWidgetViewModel(title: "Waffle Large", imageRoute: "assets/images/vanilla.png"),
+      ConeWidgetViewModel(title: "Sugar Medium", imageRoute: "assets/images/vanilla.png"),
+      ConeWidgetViewModel(title: "Sugar Large", imageRoute: "assets/images/vanilla.png"),
     ];
   }
 }
