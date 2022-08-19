@@ -2,6 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:icecreamapp/utils/ViewUtils.dart';
+import 'package:icecreamapp/view/IceCreamWidget/IceCreamWidget.dart';
+import 'package:icecreamapp/view/IceCreamWidget/IceCreamWidgetViewModel.dart';
+import 'package:icecreamapp/view/ListDisplay.dart';
 
 class Developer extends StatelessWidget {
   static const routeName = '/developeric';
@@ -47,7 +51,7 @@ class Developer extends StatelessWidget {
   void showIceCreamScroller(context) {
     showModalBottomSheet(context: context, builder: (BuildContext bc){
       return Container(
-        height: MediaQuery.of(context).size.height * .6,
+        height: MediaQuery.of(context).size.height * .7,
         child: Column(
           children: [
             Row(
@@ -76,34 +80,7 @@ class Developer extends StatelessWidget {
               ],
             ),
             Row(children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Container(
-                  height: 171,
-                  margin: EdgeInsets.only(top: 25, bottom: 5),
-                  child: Row(
-                    children: <Widget>[
-                      IceCreamWidget(
-                        title: 'Vanilla',
-                        imageRoute: 'assets/images/vanilla.png',
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      IceCreamWidget(
-                        title: 'Coconut',
-                        imageRoute: 'assets/images/coco.png',
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      IceCreamWidget(
-                        title: 'Exotic',
-                        imageRoute: 'assets/images/exotic.png',
-                      ),
-                    ],
-                  ),
-                ),)
+              HorizontalListDisplay(lItems: _getIceCreamWidgetViewModels())
             ])
           ],
         ));
@@ -111,8 +88,23 @@ class Developer extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0)
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(ViewUtils.colorFromHex("#f6acb0")),
     );
+  }
+
+  List<IceCreamWidgetViewModel> _getIceCreamWidgetViewModels() {
+    // Temporarily hard coded. Need to add service class to retrieve dynamically
+    return [
+      IceCreamWidgetViewModel(title: "Vanilla", imageRoute: "assets/images/vanilla.png"),
+      IceCreamWidgetViewModel(title: "Coconut", imageRoute: "assets/images/coco.png"),
+      IceCreamWidgetViewModel(title: "Exotic", imageRoute: "assets/images/exotic.png"),
+      IceCreamWidgetViewModel(title: "Vanilla 2.0", imageRoute: "assets/images/vanilla.png"),
+      IceCreamWidgetViewModel(title: "Coconut 2.0", imageRoute: "assets/images/coco.png"),
+      IceCreamWidgetViewModel(title: "Exotic 2.0", imageRoute: "assets/images/exotic.png"),
+      IceCreamWidgetViewModel(title: "Vanilla 3.0", imageRoute: "assets/images/vanilla.png"),
+      IceCreamWidgetViewModel(title: "Coconut 3.0", imageRoute: "assets/images/coco.png"),
+      IceCreamWidgetViewModel(title: "Exotic 3.0", imageRoute: "assets/images/exotic.png"),
+    ];
   }
 }
 
@@ -159,47 +151,4 @@ class DeveloperItem extends StatelessWidget {
         )
       ]);
     }
-}
-
-class IceCreamWidget extends StatelessWidget {
-  final String title;
-  final String imageRoute;
-
-  const IceCreamWidget({
-    this.title,
-    this.imageRoute
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none, children: <Widget>[
-      Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(title),
-          ],
-        ),
-        height: 125,
-        width: 130,
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.all(
-            Radius.circular(40),
-          ),
-        ),
-      ),
-      Positioned(
-        left: 70,
-        bottom: 81,
-        child: Container(
-          height: 63,
-          width: 63,
-          child: Image.asset(imageRoute),
-        ),
-      ),
-    ],
-    );
-  }
 }

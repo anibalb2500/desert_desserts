@@ -1,4 +1,4 @@
-#Thu Aug 18 15:22:14 MST 2022
+#Fri Aug 19 09:39:57 MST 2022
 base.1=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
 path.1=classes2.dex
 base.0=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
