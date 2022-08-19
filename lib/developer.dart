@@ -33,7 +33,7 @@ class Developer extends StatelessWidget {
                     DeveloperItem(
                       title: "Ice Cream Scroller",
                       onClick: () {
-                        // TODO: Show Ice Cream Scroller
+                        showIceCreamScroller(context);
                       },
                     )
                   ],
@@ -41,6 +41,77 @@ class Developer extends StatelessWidget {
               ],
             )
         )
+    );
+  }
+  
+  void showIceCreamScroller(context) {
+    showModalBottomSheet(context: context, builder: (BuildContext bc){
+      return Container(
+        height: MediaQuery.of(context).size.height * .6,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(right: 20, left: 5, top: 25, bottom: 25),
+                    child: Text(
+                      "Mix and Match!",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 30,
+                        fontFamily: "Puffy",
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.cancel, color: Colors.black, size: 25,),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            ),
+            Row(children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Container(
+                  height: 171,
+                  margin: EdgeInsets.only(top: 25, bottom: 5),
+                  child: Row(
+                    children: <Widget>[
+                      IceCreamWidget(
+                        title: 'Vanilla',
+                        imageRoute: 'assets/images/vanilla.png',
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IceCreamWidget(
+                        title: 'Coconut',
+                        imageRoute: 'assets/images/coco.png',
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      IceCreamWidget(
+                        title: 'Exotic',
+                        imageRoute: 'assets/images/exotic.png',
+                      ),
+                    ],
+                  ),
+                ),)
+            ])
+          ],
+        ));
+    },
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0)
+        ),
+        backgroundColor: Colors.orangeAccent,
     );
   }
 }
@@ -88,4 +159,47 @@ class DeveloperItem extends StatelessWidget {
         )
       ]);
     }
+}
+
+class IceCreamWidget extends StatelessWidget {
+  final String title;
+  final String imageRoute;
+
+  const IceCreamWidget({
+    this.title,
+    this.imageRoute
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none, children: <Widget>[
+      Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(title),
+          ],
+        ),
+        height: 125,
+        width: 130,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.all(
+            Radius.circular(40),
+          ),
+        ),
+      ),
+      Positioned(
+        left: 70,
+        bottom: 81,
+        child: Container(
+          height: 63,
+          width: 63,
+          child: Image.asset(imageRoute),
+        ),
+      ),
+    ],
+    );
+  }
 }
