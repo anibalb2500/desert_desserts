@@ -155,6 +155,9 @@ com/google/android/material/tabs/TabLayout$TabIndicatorGravity.class
 com/google/android/material/textfield/TextInputLayout$BoxBackgroundMode.class
 io/flutter/FlutterInjector.class
 io/flutter/app/FlutterApplication.class
+io/flutter/embedding/android/AndroidTouchProcessor$PointerChange.class
+io/flutter/embedding/android/AndroidTouchProcessor$PointerDeviceKind.class
+io/flutter/embedding/android/AndroidTouchProcessor$PointerSignalKind.class
 io/flutter/embedding/engine/loader/FlutterLoader.class
 kotlin/BuilderInference.class
 kotlin/DeepRecursiveScope.class

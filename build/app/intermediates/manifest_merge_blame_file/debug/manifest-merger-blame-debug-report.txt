@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\anibal-bojorquez\Github\dessert_deserts.git\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\Users\anibal-bojorquez\Github\dessert_deserts.git\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->/Users/anibal.bojorquez/development/JAM/desert_desserts.git/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/anibal.bojorquez/development/JAM/desert_desserts.git/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <!--
 16     io.flutter.app.FlutterApplication is an android.app.Application that
 17         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -24,7 +24,7 @@
 22    <application
 23        android:name="android.app.Application"
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.6.0] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\302389a8a46ecc535a76d16c96f99dde\core-1.6.0\AndroidManifest.xml:24:18-86
+24-->[androidx.core:core:1.6.0] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/302389a8a46ecc535a76d16c96f99dde/core-1.6.0/AndroidManifest.xml:24:18-86
 25        android:debuggable="true"
 26        android:icon="@mipmap/ic_launcher"
 27        android:label="icecreamapp" >
@@ -50,17 +50,17 @@
 47            android:value="2" />
 48
 49        <uses-library
-49-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+49-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 50            android:name="androidx.window.extensions"
-50-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+50-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
 51            android:required="false" />
-51-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+51-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
 52        <uses-library
-52-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+52-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
 53            android:name="androidx.window.sidecar"
-53-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+53-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 54            android:required="false" />
-54-->[androidx.window:window:1.0.0-beta04] C:\Users\anibal-bojorquez\.gradle\caches\transforms-2\files-2.1\0d61eabb9feae2c99a6b6144e5932e4f\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+54-->[androidx.window:window:1.0.0-beta04] /Users/anibal.bojorquez/.gradle/caches/transforms-2/files-2.1/54cedd2ab503bb2120b0224eaf7edd3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
 55    </application>
 56
 57</manifest>

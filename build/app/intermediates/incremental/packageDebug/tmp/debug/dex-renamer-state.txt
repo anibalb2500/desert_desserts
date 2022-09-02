@@ -1,7 +1,7 @@
-#Fri Aug 19 10:47:25 MST 2022
-base.1=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
+#Fri Sep 02 14:45:23 MST 2022
+base.1=/Users/anibal.bojorquez/development/JAM/desert_desserts.git/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
 path.1=classes2.dex
-base.0=C\:\\Users\\anibal-bojorquez\\Github\\dessert_deserts.git\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+base.0=/Users/anibal.bojorquez/development/JAM/desert_desserts.git/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex
