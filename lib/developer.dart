@@ -10,6 +10,10 @@ import 'package:icecreamapp/view/Swapper/IceCreamWidget/IceCreamWidgetViewModel.
 
 class Developer extends StatelessWidget {
   static const routeName = '/developeric';
+  IceCreamWidgetViewModel? iceCreamWidgetViewModel;
+  ConeWidgetViewModel? coneWidgetViewModel;
+  bool showActionButton = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,12 +85,52 @@ class Developer extends StatelessWidget {
               ],
             ),
             Row(children: [
-              HorizontalListDisplay(lItems: _getIceCreamWidgetViewModels())
+              HorizontalListDisplay<IceCreamWidgetViewModel>(
+                lItems: _getIceCreamWidgetViewModels(),
+                onUpdateSelected: (viewModel) => {
+                  updateSelectedIceCream(viewModel)
+                },
+              )
             ],),
             SizedBox(height: 10),
             Row(children: [
-              HorizontalListDisplay(lItems: _getConeWidgetViewModels())
-            ],)
+              HorizontalListDisplay<ConeWidgetViewModel>(
+                lItems: _getConeWidgetViewModels(),
+                onUpdateSelected: updateSelectedCone,
+              )
+            ],),
+            Visibility(
+              visible: showActionButton,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned.fill(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color(0xFF0D47A1),
+                              Color(0xFF1976D2),
+                              Color(0xFF42A5F5),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(16.0),
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {},
+                      child: const Text('Gradient'),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ));
     },
@@ -123,6 +167,16 @@ class Developer extends StatelessWidget {
       ConeWidgetViewModel("Sugar Large", "assets/images/vanilla.png"),
     ];
   }
+
+  void updateSelectedIceCream(IceCreamWidgetViewModel? viewModel) {
+    iceCreamWidgetViewModel = viewModel;
+    showActionButton = iceCreamWidgetViewModel != null && coneWidgetViewModel != null;
+  }
+
+  void updateSelectedCone(ConeWidgetViewModel? viewModel) {
+    coneWidgetViewModel = viewModel;
+    showActionButton = iceCreamWidgetViewModel != null && coneWidgetViewModel != null;
+  }
 }
 
 class DeveloperItem extends StatelessWidget {
@@ -130,8 +184,8 @@ class DeveloperItem extends StatelessWidget {
   final Function() onClick;
 
   const DeveloperItem({
-    this.title,
-    this.onClick,
+    required this.title,
+    required this.onClick,
   });
 
   @override

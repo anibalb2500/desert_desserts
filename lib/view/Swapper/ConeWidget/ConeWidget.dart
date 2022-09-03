@@ -6,7 +6,7 @@ class ConeWidget extends StatelessWidget {
   final ConeWidgetViewModel viewModel;
 
   const ConeWidget({
-    this.viewModel
+    required this.viewModel
   });
 
   @override

@@ -143,10 +143,10 @@
       "name": "icecreamapp",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-09-02T18:28:31.954354Z",
+  "generated": "2022-09-02T23:18:13.985837Z",
   "generator": "pub",
   "generatorVersion": "2.18.0"
 }

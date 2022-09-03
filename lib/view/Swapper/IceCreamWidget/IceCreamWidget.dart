@@ -7,7 +7,7 @@ class IceCreamWidget extends StatelessWidget {
   final IceCreamWidgetViewModel viewModel;
 
   const IceCreamWidget({
-    this.viewModel
+    required this.viewModel
   });
 
   @override

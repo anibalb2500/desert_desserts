@@ -5,26 +5,33 @@ import 'Swapper/ConeWidget/ConeWidgetViewModel.dart';
 import 'Swapper/IceCreamWidget/IceCreamWidget.dart';
 import 'Swapper/IceCreamWidget/IceCreamWidgetViewModel.dart';
 
-class HorizontalListDisplay extends StatefulWidget {
+class HorizontalListDisplay<T> extends StatefulWidget {
   final List<Object> lItems;
+  final Function(T? viewModel) onUpdateSelected;
 
   const HorizontalListDisplay({
-    this.lItems
+    required this.lItems,
+    required this.onUpdateSelected
   });
 
   @override
-  State createState () => DynamicList(lItems: lItems);
+  State createState () => DynamicList(
+    lItems: lItems,
+    onUpdateSelected: onUpdateSelected
+  );
 
   void onScrollEnded(ScrollEndNotification endNotification) {
     print("Update display");
   }
 }
 
-class DynamicList extends State<HorizontalListDisplay> {
+class DynamicList<T> extends State<HorizontalListDisplay> {
   final List<Object> lItems;
+  final Function(T? viewModel) onUpdateSelected;
 
   DynamicList({
-    this.lItems
+    required this.lItems,
+    required this.onUpdateSelected
   });
 
   @override
@@ -43,17 +50,29 @@ class DynamicList extends State<HorizontalListDisplay> {
               if (lItems[index] is IceCreamWidgetViewModel) {
                 return InViewNotifierWidget(
                   id: '$index',
-                  builder: (BuildContext context, bool isInView, Widget child) {
-                    (item as IceCreamWidgetViewModel).displaySelected = isInView;
-                    return IceCreamWidget(viewModel: item as IceCreamWidgetViewModel);
+                  builder: (BuildContext context, bool isInView, Widget? child) {
+                    if ((item as IceCreamWidgetViewModel).displaySelected && !isInView) {
+                      onUpdateSelected(null);
+                    }
+                    if (isInView) {
+                      onUpdateSelected(item as T);
+                    }
+                    item.displaySelected = isInView;
+                    return IceCreamWidget(viewModel: item);
                   },
                 );
               } else if (lItems[index] is ConeWidgetViewModel) {
                 return InViewNotifierWidget(
                   id: '$index',
-                  builder: (BuildContext context, bool isInView, Widget child) {
-                    (item as ConeWidgetViewModel).displaySelected = isInView;
-                    return ConeWidget(viewModel: item as ConeWidgetViewModel);
+                  builder: (BuildContext context, bool isInView, Widget? child) {
+                    if ((item as ConeWidgetViewModel).displaySelected && !isInView) {
+                      onUpdateSelected(null);
+                    }
+                    if (isInView) {
+                      onUpdateSelected(item as T);
+                    }
+                    item.displaySelected = isInView;
+                    return ConeWidget(viewModel: item);
                   },
                 );
               } else {

@@ -4,7 +4,7 @@ class SwapperItemViewModel {
   bool displaySelected = false;
 
   SwapperItemViewModel({
-    this.title,
-    this.imageRoute
+    required this.title,
+    required this.imageRoute
   });
 }

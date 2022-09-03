@@ -237,12 +237,12 @@ class StackedCard extends StatelessWidget {
   final Color priceColor;
 
   const StackedCard({
-    this.title,
-    this.price,
-    this.imageRoute,
-    this.cardColor,
-    this.buttonColor,
-    this.priceColor,
+    required this.title,
+    required this.price,
+    required this.imageRoute,
+    required this.cardColor,
+    required this.buttonColor,
+    required this.priceColor,
   });
 
   @override
